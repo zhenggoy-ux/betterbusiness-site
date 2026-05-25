@@ -1,51 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Better Business Strategy Limited</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Better Business Strategy Limited | 五井善株式会社</title>
+
 <style>
-body {font-family: Arial; margin:0; text-align:center; color:#333;}
-.section {padding:60px 20px;}
-.hero {background:#f5f5f5;}
-h1 {font-size:40px;}
-.card {border:1px solid #ddd; padding:20px; margin:10px; border-radius:10px;}
-.container {max-width:900px; margin:auto;}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1f1f1f;
+  background: #ffffff;
+  line-height: 1.6;
+}
+a { color: inherit; text-decoration: none; }
+.container { max-width: 1120px; margin: auto; padding: 0 22px; }
+.section { padding: 80px 0; }
+.hero {
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(rgba(8,10,15,.82), rgba(8,10,15,.82)),
+    radial-gradient(circle at top right, #555, #111 45%, #050505);
+  color: #fff;
+}
+.logo {
+  font-size: 18px;
+  letter-spacing: .5px;
+  margin-bottom: 80px;
+  color: #ddd;
+}
+.hero h1 {
+  font-size: 58px;
+  line-height: 1.08;
+  max-width: 900px;
+  margin: 0 0 24px;
+}
+.hero p {
+  font-size: 20px;
+  max-width: 760px;
+  color: #d8d8d8;
+}
+.badge {
+  display: inline-block;
+  padding: 9px 15px;
+  border: 1px solid #777;
+  border-radius: 50px;
+  font-size: 14px;
+  color: #eee;
+  margin-bottom: 24px;
+}
+.btn {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 14px 24px;
+  background: #fff;
+  color: #111;
+  border-radius: 6px;
+  font-weight: bold;
+}
+h2 {
+  font-size: 36px;
+  margin: 0 0 18px;
+}
+.lead {
+  font-size: 19px;
+  color: #555;
+  max-width: 760px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 36px;
+}
+.card {
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+  padding: 28px;
+  background: #fff;
+}
+.card h3 {
+  margin-top: 0;
+  font-size: 21px;
+}
+.card p { color: #5c5c5c; }
+.dark {
+  background: #111;
+  color: #fff;
+}
+.dark p { color: #d0d0d0; }
+.highlight {
+  background: #f7f7f7;
+}
+.two {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 48px;
+  align-items: center;
+}
+.visual {
+  height: 360px;
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(0,0,0,.78), rgba(0,0,0,.3)),
+    radial-gradient(circle at 25% 25%, #999, #222 40%, #050505);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  padding: 35px;
+}
+.visual strong {
+  font-size: 34px;
+  line-height: 1.25;
+}
+.steps {
+  counter-reset: step;
+}
+.step {
+  border-left: 3px solid #111;
+  padding: 6px 0 26px 22px;
+  margin-bottom: 8px;
+}
+.step h3 { margin: 0 0 6px; }
+.contact {
+  background: #f2f2f2;
+}
+.footer {
+  padding: 30px 0;
+  text-align: center;
+  color: #777;
+  font-size: 14px;
+}
+@media (max-width: 800px) {
+  .hero h1 { font-size: 40px; }
+  .grid, .two { grid-template-columns: 1fr; }
+  .logo { margin-bottom: 50px; }
+}
 </style>
 </head>
 
 <body>
 
-<div class="section hero">
-<h1>Better Business Strategy Limited</h1>
-<p>五井善株式会社</p>
-<h2>Reach Restaurants Worldwide — Without Upfront Cost</h2>
-<p>We help brands promote products to restaurants globally through targeted outreach campaigns.</p>
-</div>
+<section class="hero">
+  <div class="container">
+    <div class="logo">Better Business Strategy Limited ｜ 五井善株式会社</div>
+    <div class="badge">Restaurant Market Access Partner</div>
+    <h1>Access Restaurant Markets Worldwide</h1>
+    <p>
+      We help restaurant-focused brands reach major cities around the world through one of the most extensive restaurant contact networks available, including valuable business email contacts.
+    </p>
+    <a class="btn" href="mailto:goy@betterbusiness-ad.com">Discuss a Partnership</a>
+  </div>
+</section>
 
-<div class="section">
-<h2>Our Advantage</h2>
-<div class="container">
-<div class="card">Global restaurant coverage (60–85%)</div>
-<div class="card">Commission-based partnership</div>
-<div class="card">Professional targeted campaigns</div>
-</div>
-</div>
+<section class="section">
+  <div class="container two">
+    <div>
+      <h2>We are not simply an email marketing company.</h2>
+      <p class="lead">
+        Our strength is restaurant market access. We work with brands whose products are suitable for restaurants, chefs, kitchen staff, restaurant owners, distributors, and food-service buyers.
+      </p>
+      <p>
+        Through targeted outreach and structured campaign execution, we help suitable products gain exposure to restaurant audiences across global major cities.
+      </p>
+    </div>
+    <div class="visual">
+      <strong>Global Restaurant<br>Contact Network</strong>
+    </div>
+  </div>
+</section>
 
-<div class="section">
-<h2>Focus Product: Kitchen Knives</h2>
-<p>Used in every restaurant and ideal for both business and personal purchase.</p>
-</div>
+<section class="section highlight">
+  <div class="container">
+    <h2>Why companies work with us</h2>
+    <p class="lead">
+      For brands that want restaurant exposure, the hardest part is not creating a message — it is reaching the right market at scale.
+    </p>
 
-<div class="section">
-<h2>About</h2>
-<p>Founded by Goy Zheng, based in Osaka, Japan.</p>
-</div>
+    <div class="grid">
+      <div class="card">
+        <h3>Extensive Restaurant Data</h3>
+        <p>
+          We can access restaurant information across major cities worldwide, including important business email contacts.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Restaurant-Focused Promotion</h3>
+        <p>
+          Campaigns are designed for products that can be promoted to restaurant businesses, staff, chefs, and related buyers.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Performance-Based Model</h3>
+        <p>
+          We are open to commission-based cooperation, especially as a starting model for long-term partnerships.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div class="section">
-<h2>Contact</h2>
-<p>Email: goy@betterbusiness-ad.com</p>
-<p>Address: 1 Chome-8-10 Nishimiyahara, Yodogawa Ward, Osaka</p>
+<section class="section dark">
+  <div class="container">
+    <h2>Current Focus: Japanese Kitchen Knives</h2>
+    <p class="lead">
+      Japanese kitchen knives are currently our first focus because they are highly suitable for restaurant-focused promotion.
+    </p>
+    <p>
+      Every restaurant uses knives. Chefs and kitchen staff may also purchase quality knives personally, which creates both B2B and B2C potential. As a Japan-based company, we are especially interested in working with Japanese kitchen knife brands that want broader international exposure.
+    </p>
+    <p>
+      However, our service is not limited to kitchen knives. Any product that fits restaurant audiences may be suitable for our outreach model.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container two">
+    <div>
+      <h2>Suitable product categories</h2>
+      <p class="lead">
+        We are especially interested in products that are useful, attractive, or repeatedly needed by restaurants and restaurant staff.
+      </p>
+    </div>
+    <div>
+      <div class="card">Kitchen knives and professional kitchen tools</div>
+      <div class="card">Restaurant equipment and supplies</div>
+      <div class="card">Food-service products and consumables</div>
+      <div class="card">Brands seeking restaurant market entry</div>
+    </div>
+  </div>
+</section>
+
+<section class="section highlight">
+  <div class="container">
+    <h2>How the partnership works</h2>
+
+    <div class="steps">
+      <div class="step">
+        <h3>1. Product review</h3>
+        <p>We first understand your product, target market, pricing, and cooperation model.</p>
+      </div>
+      <div class="step">
+        <h3>2. Campaign planning</h3>
+        <p>We prepare positioning, outreach message, and suitable restaurant audience direction.</p>
+      </div>
+      <div class="step">
+        <h3>3. Restaurant outreach</h3>
+        <p>Your product is introduced to relevant restaurant contacts through structured campaigns.</p>
+      </div>
+      <div class="step">
+        <h3>4. Long-term cooperation</h3>
+        <p>If the campaign proves effective, we can continue under a commission-based or long-term partnership model.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>About us</h2>
+    <p class="lead">
+      Better Business Strategy Limited ｜ 五井善株式会社 is based in Osaka, Japan and founded by Goy Zheng.
+    </p>
+    <p>
+      Our mission is to help suitable brands access restaurant markets worldwide with a practical, performance-focused approach. We aim to become a long-term advertising and market access partner for companies targeting the restaurant industry.
+    </p>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="container">
+    <h2>Contact</h2>
+    <p class="lead">
+      If your product is suitable for restaurants or restaurant staff, we would be happy to discuss a possible cooperation model.
+    </p>
+    <p><strong>Email:</strong> goy@betterbusiness-ad.com</p>
+    <p><strong>Address:</strong> 1 Chome-8-10 Nishimiyahara, Yodogawa Ward, Osaka, 532-0004, Japan</p>
+    <a class="btn" href="mailto:goy@betterbusiness-ad.com">Email Goy Zheng</a>
+  </div>
+</section>
+
+<div class="footer">
+  © 2026 Better Business Strategy Limited ｜ 五井善株式会社
 </div>
 
 </body>
