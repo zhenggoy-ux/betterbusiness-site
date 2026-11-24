@@ -21,6 +21,9 @@
     document.querySelectorAll('[data-en][data-ja]').forEach(function (element) {
       element.textContent = element.getAttribute('data-' + lang);
     });
+    document.querySelectorAll('img[data-alt-en]').forEach(function (image) {
+      image.alt = image.getAttribute('data-alt-' + lang);
+    });
     Object.keys(buttons).forEach(function (key) {
       if (!buttons[key]) return;
       buttons[key].classList.toggle('on', key === lang);
