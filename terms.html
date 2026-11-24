@@ -2,17 +2,29 @@
 
 <html class="lang-en" lang="en">
 <head>
-<script>(function(){var l='en';try{var q=new URLSearchParams(location.search).get('lang');var s=localStorage.getItem('bba-lang');l=q==='ja'||q==='en'?q:s==='ja'?'ja':'en';}catch(e){}document.documentElement.lang=l;document.documentElement.className='lang-'+l;})();</script>
+<script>
+(function () {
+  var languages = ['en', 'ja', 'zh'];
+  var lang = new URLSearchParams(location.search).get('lang');
+  if (languages.indexOf(lang) < 0) {
+    try { lang = localStorage.getItem('bba-lang'); } catch (_) {}
+  }
+  if (languages.indexOf(lang) < 0) lang = 'en';
+  document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang;
+  document.documentElement.className = 'lang-' + lang;
+})();
+</script>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title data-en="Terms of Service | Better Business Ad" data-ja="利用規約 | Better Business Ad">Terms of Service | Better Business Ad</title>
+<title data-zh="服务条款 | Better Business Ad" data-en="Terms of Service | Better Business Ad" data-ja="利用規約 | Better Business Ad">Terms of Service | Better Business Ad</title>
 <meta content="Better Business Ad: B2B marketing services, audience research and monthly outreach pricing." name="description"/>
-<link href="style.css?v=20261030a" rel="stylesheet"/>
+<link href="style.css?v=20261124a" rel="stylesheet"/>
 </head>
 <body>
 <a class="skip-link" href="#main-content">
 <span data-l="en">Skip to content</span>
 <span data-l="ja">本文へ移動</span>
+<span data-l="zh">跳至正文</span>
 </a>
 <header class="head">
 <div class="wrap navb">
@@ -22,115 +34,150 @@
 <a href="index.html">
 <span data-l="en">Home</span>
 <span data-l="ja">ホーム</span>
+<span data-l="zh">首页</span>
 </a>
 <a href="services.html">
 <span data-l="en">Services &amp; Pricing</span>
 <span data-l="ja">サービス・料金</span>
+<span data-l="zh">服务与价格</span>
 </a>
 <a href="terms.html" aria-current="page">
 <span data-l="en">Terms</span>
 <span data-l="ja">利用規約</span>
+<span data-l="zh">服务条款</span>
 </a>
 <a href="privacy.html">
 <span data-l="en">Privacy</span>
 <span data-l="ja">プライバシー</span>
+<span data-l="zh">隐私政策</span>
 </a>
 <a href="legal.html">
 <span data-l="en">Disclosure</span>
 <span data-l="ja">特商法表記</span>
+<span data-l="zh">交易信息披露</span>
 </a>
 </nav>
 <div class="langs" role="group" aria-label="Language">
 <button id="enBtn" type="button" aria-pressed="true">EN</button>
 <button id="jaBtn" type="button" aria-pressed="false">日本語</button>
+<button id="zhBtn" type="button" lang="zh-CN" aria-pressed="false">简体中文</button>
 </div>
 </div>
 </header>
 <main class="wrap" id="main-content">
 <div data-l="en" class="eyebrow">TERMS</div>
 <div data-l="ja" class="eyebrow">利用規約</div>
+<div data-l="zh" class="eyebrow">服务条款</div>
 <h1 data-l="en">Terms of Service</h1>
 <h1 data-l="ja">利用規約</h1>
+<h1 data-l="zh">服务条款</h1>
 <p data-l="en">Services, service periods and exact JPY charges are agreed in writing before payment.</p>
 <p data-l="ja">サービスの内容・期間および最終的な日本円の料金は、お支払い前に書面で確認します。</p>
+<p data-l="zh">服务内容、期限及最终日元金额在付款前书面确认。</p>
 <div class="prose">
 <section class="terms-section">
 <h2 data-l="en">1. Operator and scope</h2>
 <h2 data-l="ja">1. 事業者および適用範囲</h2>
+<h2 data-l="zh">1. 运营主体与适用范围</h2>
 <p data-l="en">Better Business Ad is operated by 五井善株式会社 (Goizen Co., Ltd.), located at 1-8-10 Nishimiyahara, Yodogawa-ku, Osaka-shi, Osaka 532-0004, Japan. These terms apply to B2B marketing and related professional services agreed between the operator and business clients.</p>
 <p data-l="ja">Better Business Adは、五井善株式会社（〒532-0004 大阪府大阪市淀川区西宮原1丁目8番10号）が運営します。本規約は、当社と法人その他の事業者であるお客様との間で合意するB2Bマーケティング関連サービスに適用されます。</p>
+<p data-l="zh">Better Business Ad 由五井善株式会社运营，地址为日本〒532-0004 大阪府大阪市淀川区西宮原1丁目8番10号。本条款适用于本公司与企业及其他经营者约定的 B2B 营销及相关专业服务。</p>
 </section>
 <section class="terms-section">
 <h2 data-l="en">2. Services and quotations</h2>
 <h2 data-l="ja">2. サービス内容と見積り</h2>
+<h2 data-l="zh">2. 服务与报价</h2>
 <p data-l="en">Services may include B2B email marketing, research of shops and prospective companies, market research, and international sales development support. Each engagement is customized. Scope, deliverables, schedule, price (in JPY), and any separately charged expenses will be provided in a written quotation, proposal, invoice, or agreement before the client accepts an order. No self-service purchase or physical shipment is offered.</p>
 <p data-l="ja">当社は、B2Bメールマーケティング、企業・見込み顧客の調査、市場調査、海外営業開発支援などを提供します。業務内容は個別に定め、作業範囲、成果物、期間、料金（日本円）および別途請求する費用は、ご注文の確定前に見積書、提案書、請求書または契約書等の書面で提示します。物品の発送はありません。</p>
+<p data-l="zh">我们提供企业及潜在客户调查、市场调研、B2B 邮件推广和海外销售开发支持。每个项目单独约定。在客户确认订单前，我们通过报价单、方案、账单或合同列明工作范围、交付内容、期限、日元价格及另收费用。项目不涉及实物配送。</p>
 <p data-l="en">Our restaurant and clothing-store campaigns use shop or company information and general business mailboxes, such as info@ or sales@ addresses. Fees cover the agreed research, campaign planning, content preparation and outreach work. We do not trade in lists containing individuals’ personal contact information.</p>
 <p data-l="ja">飲食店・衣料品店向けの施策では、店舗・企業の情報と、info@ や sales@ などの汎用的な業務用メールアドレスを使用します。料金の対象は、合意した調査、販促企画、文案作成およびアプローチの実施業務です。個人の連絡先情報を含む名簿を取引対象とするサービスではありません。</p>
+<p data-l="zh">针对餐厅及服装店的推广使用商铺、企业信息及 info@、sales@ 等通用业务邮箱。费用涵盖双方约定的调研、推广规划、文案及执行工作。我们不交易含有个人联系方式的名单。</p>
 </section>
 <section class="terms-section">
 <h2 data-l="en">3. Acceptance and payment</h2>
 <h2 data-l="ja">3. お申込みとお支払い</h2>
+<h2 data-l="zh">3. 委托与付款</h2>
 <p data-l="en">Services begin only after the parties agree to the proposed engagement in writing and any required payment has been confirmed. Payment is generally due before work starts, on the due date stated in the applicable quotation, invoice, or agreement. Payment may be made by bank transfer where offered or through a secure online payment link; only the methods shown at the payment page are available. The client's financial institution may impose its own transfer or currency-conversion charges.</p>
 <p data-l="ja">お客様と当社が業務条件を書面で合意し、必要なお支払いを確認した後、業務を開始します。原則として業務開始前のお支払いとし、具体的な期限は見積書、請求書または契約書に記載します。お支払いは、ご案内した銀行振込または安全なオンライン決済リンクで行えます。利用できる決済手段は決済画面に表示されるものに限ります。金融機関が課す振込手数料や為替換算費用は、お客様のご負担となる場合があります。</p>
+<p data-l="zh">双方书面同意服务条件并确认收到约定款项后开始服务。原则上应在服务开始前付款，具体期限见报价单、账单或合同。可按通知进行银行转账或使用安全付款链接，具体在线支付方式以付款页面显示为准。客户的金融机构可能向客户收取转账或换汇费用。</p>
 </section>
 <section class="terms-section">
 <h2 data-l="en">3.1 Monthly plans, advance purchases and renewal</h2>
 <h2 data-l="ja">3.1 月額プラン・複数か月前払い・更新</h2>
+<h2 data-l="zh">3.1 月度套餐、多月预付与续期</h2>
 <p data-l="en">The Starter, Growth, Business and Enterprise plans use one month as a service-delivery unit and differ principally by the agreed maximum target-contact audience size. A client may purchase one month or multiple specified months in advance. A single payment covers only the agreed service period(s); it does not authorize automatic renewal or recurring charges. A further term requires a new agreement and a new payment initiated by the client. Project-specific audience eligibility, content, timing and service-month scope are confirmed in writing before payment.</p>
 <p data-l="ja">Starter、Growth、Business、Enterpriseの各プランは1か月をサービス提供単位とし、主として対象連絡先の上限規模が異なります。お客様は1か月または特定の複数か月分を前払いできます。1回のお支払いは合意されたサービス期間にのみ適用され、自動更新・定期課金の承諾にはなりません。追加期間には新たな合意とお客様ご自身による都度払いが必要です。対象連絡先の適格性、内容、実施時期および各月の範囲は支払い前に書面で確認します。</p>
+<p data-l="zh">四档套餐以一个月为服务单位，主要区别是目标联系规模上限。客户可一次预付一个月或约定的多个月份，每次付款仅适用于约定期间。续期须重新达成协议并由客户另行付款，不自动续期或扣费。我们在付款前书面确认目标对象的联系条件、推广内容、时间及每月工作范围。</p>
 <p data-l="en">The start and end dates of each service month, applicable tax treatment and any additional charges are stated in writing before payment.</p>
 <p data-l="ja">各サービス月の開始日・終了日、適用される税の取扱いおよび追加費用の有無は、お支払い前に書面で明示します。</p>
+<p data-l="zh">每个服务月的起止日期、适用税费及额外费用在付款前书面列明。</p>
 </section>
 <section class="terms-section">
 <h2 data-l="en">4. Delivery and client cooperation</h2>
 <h2 data-l="ja">4. 業務開始・実施へのご協力</h2>
+<h2 data-l="zh">4. 服务交付与客户配合</h2>
 <p data-l="en">Work commences on the date agreed in writing after acceptance and any required payment. The specific timetable and deliverables are set out in the applicable quotation or agreement. The client will provide reasonably necessary project information and approvals in a timely manner. Any material change to scope or fees requires mutual written agreement.</p>
 <p data-l="ja">業務は、契約および必要なお支払いの確認後、双方で合意した開始日から実施します。具体的な期間および成果物は見積書または契約書に記載します。お客様には、業務に必要な情報や確認事項について適時にご協力いただきます。業務範囲や料金の重要な変更には、双方の書面による合意を必要とします。</p>
+<p data-l="zh">确认订单并收到约定款项后，我们在约定日期开始工作。时间表和交付内容见报价单或合同。客户须及时提供项目合理所需的信息与确认。工作范围或费用的重大变更须经双方书面同意。</p>
 </section>
 <section class="terms-section">
 <h2 data-l="en">5. Results and communications</h2>
 <h2 data-l="ja">5. 成果および連絡</h2>
+<h2 data-l="zh">5. 服务结果与沟通</h2>
 <p data-l="en">The operator will carry out the agreed work with reasonable care and communicate progress as agreed. A fixed outreach frequency, email delivery, specific numbers of inquiries or meetings, sales and revenue are not guaranteed. Project-related notices and approvals may be exchanged by email or another written channel agreed by the parties.</p>
 <p data-l="ja">当社は合意した業務を適切な注意をもって遂行し、合意した方法で進捗を報告します。一定のアプローチ頻度、メール到達、問い合わせ件数、商談数、受注件数または売上金額などを保証するものではありません。業務に関する連絡および承認は、電子メールその他双方が合意した書面の方法で行います。</p>
+<p data-l="zh">我们将以合理的注意履行约定工作，并按约定通报进度。我们不保证固定推广频率、邮件送达、询盘数、洽谈数、订单数或销售额。双方可以通过电子邮件或其他约定的书面渠道沟通和确认项目事项。</p>
 </section>
 <section class="terms-section">
 <h2 data-l="en">6. Cancellation and refunds</h2>
 <h2 data-l="ja">6. キャンセル・返金</h2>
+<h2 data-l="zh">6. 取消与退款</h2>
 <p data-l="en">Before work begins, unused service fees will be refunded after deducting any separately approved costs or charges for work already performed. After work begins, completed work and previously approved expenses will be charged, and fees attributable to services not yet provided will be refunded, if any. The applicable service scope and terms will be agreed in writing before payment. Refund inquiries should be sent to the contact address below.</p>
 <p data-l="ja">業務開始前にキャンセルされた場合、既に個別承認された実費や着手済み作業の費用を除き、未実施分のサービス料金を返金します。業務開始後は、提供済み業務および事前承認済み費用を精算し、未提供分のサービス料金がある場合は返金します。適用する業務範囲や条件は、お支払い前に書面で合意します。返金に関するお問い合わせは下記窓口までご連絡ください。</p>
+<p data-l="zh">开始服务前取消的，扣除已获单独批准的支出或已完成工作的费用后，退还未使用的服务费。服务开始后，结算已完成工作及事先批准的支出，并退还未提供服务对应的费用（如有）。服务范围与适用条件在付款前书面约定。退款咨询请联系下方邮箱。</p>
 <p data-l="en">For a prepaid multi-month engagement, fees attributable to months not yet started will normally be refundable, less any separately agreed non-refundable work already completed and approved project expenses. For a month already underway, work actually performed and pre-approved expenses will be accounted for, and the remainder for services not provided will be refunded. The basis for allocating prepaid fees between months and any individually approved preparation costs must be stated in the written agreement before payment. No automatic renewal occurs.</p>
 <p data-l="ja">複数か月分を前払いされた場合、未開始月に相当する料金は、事前に個別合意した準備作業の対価や承認済み実費を精算したうえで、原則として返金します。開始済みの月については実施済み業務と事前承認済み費用を精算し、未提供部分を返金します。月ごとの料金配分や準備費用の扱いは、お支払い前に書面で明示します。自動更新はありません。</p>
+<p data-l="zh">预付多个月份时，尚未开始月份的费用原则上可退，扣除单独约定且已完成的准备工作费用及已批准的项目支出。当月已开始的，结算实际完成的工作和预先批准的支出，退还未提供服务部分的余额。各月费用的分摊及单独批准的准备费用在付款前书面说明。服务不自动续期。</p>
 </section>
 <section class="terms-section">
 <h2 data-l="en">7. Business information, privacy and responsible use</h2>
 <h2 data-l="ja">7. 企業情報・個人情報および適正な利用</h2>
+<h2 data-l="zh">7. 企业信息、个人信息与合理使用</h2>
 <p data-l="en">Outreach is conducted only where permitted by the laws applicable to the target country and recipient. We assess the business type, relevance, any required consent or other applicable eligibility conditions, and requests not to be contacted. Public availability of an address alone is not treated as permission to send marketing. Addresses whose eligibility cannot be confirmed are excluded from outreach.</p>
 <p data-l="ja">対象国および受信者に適用される法令で認められる場合に限り、販促を実施します。事業者の形態、内容との関連性、必要な同意その他の連絡条件、および配信停止の申出を確認します。メールアドレスが公開されていることだけを、販促メール送信の許可とはみなしません。連絡条件を確認できない宛先は対象から除外します。</p>
+<p data-l="zh">我们仅在目标国家和收件人适用的法律允许时开展推广，并核查主体类型、业务相关性、所需同意或其他联系条件，以及拒收记录。仅凭邮箱公开不足以判断可以发送推广邮件。无法确认联系条件的地址会被排除。</p>
 <p data-l="en">Clients must not request unlawful marketing or the sale of individuals’ personal contact information. Business-contact details are used for the agreed services. Information that is personal data under applicable law is handled accordingly, even if a mailbox is used for business. Privacy enquiries and requests to stop marketing may be sent to <a href="mailto:goy@betterbusiness-ad.com">goy@betterbusiness-ad.com</a>. See the <a href="privacy.html">Privacy Policy</a>.</p>
 <p data-l="ja">お客様は、違法な販促や個人の連絡先情報の販売を依頼することはできません。業務用連絡先は、合意したサービスの実施に利用します。業務用メールアドレスであっても、適用法令上の個人情報に該当する場合は、当該法令に従って取り扱います。情報の取扱いや配信停止のご相談は <a href="mailto:goy@betterbusiness-ad.com">goy@betterbusiness-ad.com</a> までご連絡ください。詳細は<a href="privacy.html">プライバシーポリシー</a>をご確認ください。</p>
+<p data-l="zh">客户不得委托违法营销或要求出售个人联系方式。我们将业务联系方式用于双方约定的服务。即便使用业务邮箱，如有关信息依适用法律属于个人信息，我们也将依法处理。信息咨询或退订请联系 <a href="mailto:goy@betterbusiness-ad.com">goy@betterbusiness-ad.com</a>。详见<a href="privacy.html">隐私政策</a>。</p>
 </section>
 <section class="terms-section">
 <h2 data-l="en">8. Relationship to individual agreements</h2>
 <h2 data-l="ja">8. 個別契約との関係</h2>
+<h2 data-l="zh">8. 与单项协议的关系</h2>
 <p data-l="en">If a written quotation or service agreement expressly provides different project-specific terms, those agreed terms take precedence for that engagement to the extent permitted by applicable law. These terms do not limit rights or remedies that cannot legally be excluded.</p>
 <p data-l="ja">個別の見積書または契約書に本規約と異なる条件を明示して合意した場合、法令で認められる範囲において当該個別条件を優先します。本規約は、法令上排除できない権利や救済を制限するものではありません。</p>
+<p data-l="zh">如双方在具体报价单或合同中明确约定不同条件，该约定在法律允许范围内优先适用于该项目。本条款不限制法律规定不得排除的权利或救济。</p>
 </section>
 <section class="terms-section">
 <h2 data-l="en">9. Contact</h2>
 <h2 data-l="ja">9. お問い合わせ</h2>
+<h2 data-l="zh">9. 联系我们</h2>
 <p data-l="en">Operator: 五井善株式会社 (Goizen Co., Ltd.)<br/>Service: Better Business Ad<br/>Email: <a href="mailto:goy@betterbusiness-ad.com" style="text-decoration:underline">goy@betterbusiness-ad.com</a>
 <br/>Phone: 080-5702-5812<br/>Address: 1-8-10 Nishimiyahara, Yodogawa-ku, Osaka-shi, Osaka 532-0004, Japan</p>
 <p data-l="ja">販売業者：五井善株式会社 ／ サービス名：Better Business Ad<br/>メール：goy@betterbusiness-ad.com ／ 電話：080-5702-5812<br/>所在地：〒532-0004 大阪府大阪市淀川区西宮原1丁目8番10号</p>
+<p data-l="zh">经营者：五井善株式会社　服务名称：Better Business Ad<br/>邮箱：goy@betterbusiness-ad.com　电话：080-5702-5812<br/>地址：日本〒532-0004 大阪府大阪市淀川区西宮原1丁目8番10号</p>
 </section>
 <div class="terms-links">
 <a href="legal.html">
 <span data-l="en">Commercial disclosure</span>
 <span data-l="ja">特定商取引法に基づく表記</span>
+<span data-l="zh">日本《特定商取引法》规定的信息披露</span>
 </a>
 <a href="privacy.html">
 <span data-l="en">Privacy Policy</span>
 <span data-l="ja">プライバシーポリシー</span>
+<span data-l="zh">隐私政策</span>
 </a>
 </div>
 </div>
@@ -141,16 +188,19 @@
 <a href="legal.html">
 <span data-l="en">Commercial disclosure</span>
 <span data-l="ja">特定商取引法に基づく表記</span>
+<span data-l="zh">日本《特定商取引法》规定的信息披露</span>
 </a> · <a href="terms.html">
 <span data-l="en">Terms of Service</span>
 <span data-l="ja">利用規約</span>
+<span data-l="zh">服务条款</span>
 </a> · <a href="privacy.html">
 <span data-l="en">Privacy Policy</span>
 <span data-l="ja">プライバシーポリシー</span>
+<span data-l="zh">隐私政策</span>
 </a>
 </div>
 </footer>
-<script src="site.js?v=20261030a">
+<script src="site.js?v=20261124a">
 </script>
 </body>
 </html>

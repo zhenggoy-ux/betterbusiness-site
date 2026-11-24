@@ -2,17 +2,29 @@
 
 <html class="lang-en" lang="en">
 <head>
-<script>(function(){var l='en';try{var q=new URLSearchParams(location.search).get('lang');var s=localStorage.getItem('bba-lang');l=q==='ja'||q==='en'?q:s==='ja'?'ja':'en';}catch(e){}document.documentElement.lang=l;document.documentElement.className='lang-'+l;})();</script>
+<script>
+(function () {
+  var languages = ['en', 'ja', 'zh'];
+  var lang = new URLSearchParams(location.search).get('lang');
+  if (languages.indexOf(lang) < 0) {
+    try { lang = localStorage.getItem('bba-lang'); } catch (_) {}
+  }
+  if (languages.indexOf(lang) < 0) lang = 'en';
+  document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang;
+  document.documentElement.className = 'lang-' + lang;
+})();
+</script>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title data-en="Privacy Policy | Better Business Ad" data-ja="プライバシーポリシー | Better Business Ad">Privacy Policy | Better Business Ad</title>
+<title data-zh="隐私政策 | Better Business Ad" data-en="Privacy Policy | Better Business Ad" data-ja="プライバシーポリシー | Better Business Ad">Privacy Policy | Better Business Ad</title>
 <meta content="Better Business Ad: B2B marketing services, audience research and monthly outreach pricing." name="description"/>
-<link href="style.css?v=20261030a" rel="stylesheet"/>
+<link href="style.css?v=20261124a" rel="stylesheet"/>
 </head>
 <body>
 <a class="skip-link" href="#main-content">
 <span data-l="en">Skip to content</span>
 <span data-l="ja">本文へ移動</span>
+<span data-l="zh">跳至正文</span>
 </a>
 <header class="head">
 <div class="wrap navb">
@@ -22,91 +34,119 @@
 <a href="index.html">
 <span data-l="en">Home</span>
 <span data-l="ja">ホーム</span>
+<span data-l="zh">首页</span>
 </a>
 <a href="services.html">
 <span data-l="en">Services &amp; Pricing</span>
 <span data-l="ja">サービス・料金</span>
+<span data-l="zh">服务与价格</span>
 </a>
 <a href="terms.html">
 <span data-l="en">Terms</span>
 <span data-l="ja">利用規約</span>
+<span data-l="zh">服务条款</span>
 </a>
 <a href="privacy.html" aria-current="page">
 <span data-l="en">Privacy</span>
 <span data-l="ja">プライバシー</span>
+<span data-l="zh">隐私政策</span>
 </a>
 <a href="legal.html">
 <span data-l="en">Disclosure</span>
 <span data-l="ja">特商法表記</span>
+<span data-l="zh">交易信息披露</span>
 </a>
 </nav>
 <div class="langs" role="group" aria-label="Language">
 <button id="enBtn" type="button" aria-pressed="true">EN</button>
 <button id="jaBtn" type="button" aria-pressed="false">日本語</button>
+<button id="zhBtn" type="button" lang="zh-CN" aria-pressed="false">简体中文</button>
 </div>
 </div>
 </header>
 <main class="wrap" id="main-content">
 <div data-l="en" class="eyebrow">PRIVACY</div>
 <div data-l="ja" class="eyebrow">プライバシー</div>
+<div data-l="zh" class="eyebrow">隐私政策</div>
 <h1 data-l="en">Privacy Policy</h1>
 <h1 data-l="ja">プライバシーポリシー</h1>
+<h1 data-l="zh">隐私政策</h1>
 <p data-l="en">How we handle client correspondence, business information and marketing-related requests.</p>
 <p data-l="ja">お客様との業務連絡、企業情報および販促に関するご相談に伴う情報の取扱いについて。</p>
+<p data-l="zh">本政策说明我们如何处理业务沟通、企业调研及推广咨询所涉及的信息。</p>
 <div class="prose">
 <p data-l="en">Better Business Ad is operated by 五井善株式会社 (Goizen Co., Ltd.), at 1-8-10 Nishimiyahara, Yodogawa-ku, Osaka-shi, Osaka 532-0004, Japan. Last updated: October 30, 2026.</p>
 <p data-l="ja">Better Business Ad は五井善株式会社（〒532-0004 大阪府大阪市淀川区西宮原1丁目8番10号）が運営しています。最終更新：2026年10月30日。</p>
+<p data-l="zh">Better Business Ad 由五井善株式会社运营，地址为日本〒532-0004 大阪府大阪市淀川区西宮原1丁目8番10号。政策最近更新于 2026 年 10 月 30 日。</p>
 <section class="section">
 <h2 data-l="en">1. Client enquiries and correspondence</h2>
 <h2 data-l="ja">1. お客様からのお問い合わせと業務連絡</h2>
+<h2 data-l="zh">1. 客户咨询与业务沟通</h2>
 <p data-l="en">We may receive the name, role, organization, business contact details, project requirements and correspondence of clients and people who enquire about our services. We use this information to respond, prepare proposals and invoices, provide the agreed work, manage the client relationship and fulfil legal obligations.</p>
 <p data-l="ja">お客様およびサービスに関するお問い合わせをいただく方の氏名、役職、会社名、業務用連絡先、案件のご要望およびやり取りを取得することがあります。お問い合わせへの回答、提案・請求書の作成、合意した業務の履行、顧客管理および法的義務の履行に利用します。</p>
+<p data-l="zh">我们可能收集客户和咨询者的姓名、职务、公司名称、业务联系方式、项目需求及沟通记录，用于答复咨询、编制方案与账单、履行服务、管理客户关系及履行法定义务。</p>
 </section>
 <section class="section">
 <h2 data-l="en">2. Shop and business information used for campaigns</h2>
 <h2 data-l="ja">2. 施策に使用する店舗・企業の情報</h2>
+<h2 data-l="zh">2. 推广中使用的商铺与企业信息</h2>
 <p data-l="en">Restaurant and clothing-store campaigns are based on shop or company information and general business mailboxes, such as info@ or sales@ addresses, obtained from business websites, public business listings and business-research sources. This information is used to research and select relevant business audiences and plan, deliver and improve the agreed B2B marketing work. We do not offer lists containing individuals’ personal contact information for sale or trade.</p>
 <p data-l="ja">飲食店・衣料品店向けの施策では、事業者のWebサイト、公開された店舗・企業情報および企業調査資料等から得られる店舗・企業の情報と、info@ や sales@ などの汎用的な業務用メールアドレスを利用します。関連性のある対象事業者の調査・選定、および合意したB2B販促業務の企画・実施・改善に利用します。個人の連絡先情報を含む名簿の販売・取引は行いません。</p>
+<p data-l="zh">针对餐厅及服装店的项目使用来自企业官网、公开商铺或企业资料及商业调研资料的企业信息，以及 info@、sales@ 等通用业务邮箱。我们用这些信息筛选相关企业，策划、执行和改进约定的 B2B 推广。我们不出售或交易含有个人联系方式的名单。</p>
 <p data-l="en">A general business mailbox is not automatically outside privacy law. Where business information identifies an individual, including in a sole-trader context, we apply the relevant personal-data and marketing requirements.</p>
 <p data-l="ja">汎用的な業務用メールアドレスであることだけで、個人情報保護法令の対象外になるとは限りません。個人事業者の場合など、情報が個人を識別するものとなる場合には、適用される個人情報保護および販促に関する法令に従って取り扱います。</p>
+<p data-l="zh">通用业务邮箱也可能涉及个人信息。例如，个体经营者的资料如能识别个人，我们会按适用的个人信息保护及营销法规处理。</p>
 </section>
 <section class="section">
 <h2 data-l="en">3. Marketing eligibility and requests to stop contact</h2>
 <h2 data-l="ja">3. 販促の実施条件と配信停止</h2>
+<h2 data-l="zh">3. 推广联系条件与退订</h2>
 <p data-l="en">Outreach is conducted only where permitted by the laws applicable to the target country and recipient. We assess the business type, relevance, any required consent or other applicable eligibility conditions, and requests not to be contacted. Public availability of an address alone is not treated as permission to send marketing. Addresses whose eligibility cannot be confirmed are excluded from outreach.</p>
 <p data-l="ja">対象国および受信者に適用される法令で認められる場合に限り、販促を実施します。事業者の形態、内容との関連性、必要な同意その他の連絡条件、および配信停止の申出を確認します。メールアドレスが公開されていることだけを、販促メール送信の許可とはみなしません。連絡条件を確認できない宛先は対象から除外します。</p>
+<p data-l="zh">我们仅在目标国家和收件人适用的法律允许时开展推广，并核查主体类型、业务相关性、所需同意或其他联系条件，以及拒收记录。仅凭邮箱公开不足以判断可以发送推广邮件。无法确认联系条件的地址会被排除。</p>
 <p data-l="en">A recipient can request that marketing stop by replying to the message or emailing <a href="mailto:goy@betterbusiness-ad.com">goy@betterbusiness-ad.com</a>. We respect applicable objections and opt-out requests and exclude the address from subsequent marketing. We may keep the minimum suppression information needed to honour the request.</p>
 <p data-l="ja">配信停止は、受信したメールへの返信または <a href="mailto:goy@betterbusiness-ad.com">goy@betterbusiness-ad.com</a> へのご連絡でお申し出いただけます。適用される異議・配信停止の申出を尊重し、以後の販促対象から除外します。申出を確実に守るため、必要最小限の配信停止情報を保持する場合があります。</p>
+<p data-l="zh">您可以回复收到的邮件或联系 <a href="mailto:goy@betterbusiness-ad.com">goy@betterbusiness-ad.com</a> 要求退订。我们尊重适用的异议与退订请求，并从后续推广中排除相关对象。为持续履行退订要求，我们可能保留最低限度的退订记录。</p>
 </section>
 <section class="section">
 <h2 data-l="en">4. Service providers and international processing</h2>
 <h2 data-l="ja">4. 業務委託先と国外での取扱い</h2>
+<h2 data-l="zh">4. 受托服务商与跨境处理</h2>
 <p data-l="en">Information may be handled by providers supporting business research, email delivery, hosting and administration where necessary for the agreed services, with appropriate safeguards and oversight. Where processing involves another country, applicable international-transfer and data-protection requirements must be met. We do not sell individuals’ personal information.</p>
 <p data-l="ja">合意したサービスに必要な範囲で、企業調査、メール配信、ホスティングおよび事務管理を支援する委託先が、適切な保護措置と監督のもと情報を取り扱う場合があります。国外での取扱いが生じる場合は、適用される国外移転および個人情報保護の要件を満たす必要があります。個人情報の販売は行いません。</p>
+<p data-l="zh">在约定服务所需范围内，协助企业调研、邮件投递、网站托管和行政管理的受托方可在适当保护和监督下处理信息。涉及境外处理时，须符合适用的跨境传输及数据保护要求。我们不出售个人信息。</p>
 </section>
 <section class="section">
 <h2 data-l="en">5. Payments and browser language preference</h2>
 <h2 data-l="ja">5. 決済と言語設定</h2>
+<h2 data-l="zh">5. 支付与语言偏好</h2>
 <p data-l="en">Online payment links are provided only when approved and available. Checkout is hosted or processed by the relevant payment provider under its own privacy and security terms. This website does not collect payment-card details directly. Our language selector stores your language preference in your browser’s local storage.</p>
 <p data-l="ja">オンライン決済リンクは、承認済みで利用可能な場合に限りご案内します。決済は、当該決済事業者のプライバシーおよび安全管理に関する条件に従い、その事業者の決済画面等で処理されます。当サイトがカード情報を直接取得することはありません。言語選択機能では、ご希望の言語をお使いのブラウザーのローカルストレージに保存します。</p>
+<p data-l="zh">仅在获批且可用时，我们才会提供在线付款链接。款项在支付服务商的页面处理，适用其隐私及安全条款。本站不直接收集银行卡信息。您选择的显示语言保存在浏览器的本地存储中。</p>
 </section>
 <section class="section">
 <h2 data-l="en">6. Security and retention</h2>
 <h2 data-l="ja">6. 安全管理と保管期間</h2>
+<h2 data-l="zh">6. 信息安全与保存期限</h2>
 <p data-l="en">We use reasonable access controls and organisational measures to protect information. We retain it only as needed for the relevant service, client administration, legal obligations and the handling of requests, then delete it or remove identifying details where appropriate. Necessary suppression records may be retained to prevent further unwanted marketing.</p>
 <p data-l="ja">情報を保護するため、合理的なアクセス管理および組織的な管理措置を講じます。関連する業務、顧客管理、法的義務およびご相談への対応に必要な期間に限り保持し、その後は適切に削除し、または識別できる情報を取り除きます。望まない販促を再開しないために必要な配信停止情報は、引き続き保持する場合があります。</p>
+<p data-l="zh">我们采取合理的访问控制及组织管理措施。信息仅在履约、客户管理、履行法定义务及处理请求所需期间内保存，之后会妥善删除或移除可识别信息。为避免再次向已退订的对象发送推广，我们可能继续保留必要的退订记录。</p>
 </section>
 <section class="section">
 <h2 data-l="en">7. Requests and contact</h2>
 <h2 data-l="ja">7. ご請求・お問い合わせ</h2>
+<h2 data-l="zh">7. 权利请求与联系</h2>
 <p data-l="en">For questions, applicable access, correction, deletion or restriction requests, or objections to marketing, contact <a href="mailto:goy@betterbusiness-ad.com">goy@betterbusiness-ad.com</a> or telephone <a href="tel:+818057025812">+81 80-5702-5812</a>. We may ask for information reasonably necessary to verify and handle a request. Operator details are also available in our <a href="legal.html">Commercial Disclosure</a>.</p>
 <p data-l="ja">情報の取扱いに関するご質問、適用法令に基づく開示・訂正・削除・利用停止等のご請求、販促への異議は、<a href="mailto:goy@betterbusiness-ad.com">goy@betterbusiness-ad.com</a> または電話 <a href="tel:+818057025812">080-5702-5812</a> までご連絡ください。ご請求への対応に合理的に必要な範囲で、ご本人や対象情報の確認をお願いする場合があります。事業者情報は<a href="legal.html">特定商取引法に基づく表記</a>にも掲載しています。</p>
+<p data-l="zh">如有信息处理疑问，希望依法查阅、更正、删除或停止使用信息，或希望拒绝推广，请联系 <a href="mailto:goy@betterbusiness-ad.com">goy@betterbusiness-ad.com</a> 或致电 <a href="tel:+818057025812">080-5702-5812</a>。为处理请求，我们可能在合理必要范围内核实您的身份或相关信息。经营者详情见<a href="legal.html">交易信息披露</a>。</p>
 </section>
 <section class="section">
 <h2 data-l="en">8. Policy updates</h2>
 <h2 data-l="ja">8. 本方針の更新</h2>
+<h2 data-l="zh">8. 政策更新</h2>
 <p data-l="en">We will update this policy when our services, data-processing practices or applicable requirements change. The updated version and date will be published on this page.</p>
 <p data-l="ja">サービス、情報の取扱いまたは適用される要件に変更がある場合、本方針を見直し、更新版と更新日をこのページに掲載します。</p>
+<p data-l="zh">我们可能因服务、信息处理方式或适用要求发生变化而修订本政策，并在本页公布新版本及更新日期。</p>
 </section>
 </div>
 </main>
@@ -116,16 +156,19 @@
 <a href="legal.html">
 <span data-l="en">Commercial disclosure</span>
 <span data-l="ja">特定商取引法に基づく表記</span>
+<span data-l="zh">日本《特定商取引法》规定的信息披露</span>
 </a> · <a href="terms.html">
 <span data-l="en">Terms of Service</span>
 <span data-l="ja">利用規約</span>
+<span data-l="zh">服务条款</span>
 </a> · <a href="privacy.html">
 <span data-l="en">Privacy Policy</span>
 <span data-l="ja">プライバシーポリシー</span>
+<span data-l="zh">隐私政策</span>
 </a>
 </div>
 </footer>
-<script src="site.js?v=20261030a">
+<script src="site.js?v=20261124a">
 </script>
 </body>
 </html>

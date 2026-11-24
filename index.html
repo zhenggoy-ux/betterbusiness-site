@@ -1,17 +1,29 @@
 <!doctype html>
 <html lang="en" class="lang-en">
 <head>
-<script>(function(){var l='en';try{var q=new URLSearchParams(location.search).get('lang');var s=localStorage.getItem('bba-lang');l=q==='ja'||q==='en'?q:s==='ja'?'ja':'en';}catch(e){}document.documentElement.lang=l;document.documentElement.className='lang-'+l;})();</script>
+<script>
+(function () {
+  var languages = ['en', 'ja', 'zh'];
+  var lang = new URLSearchParams(location.search).get('lang');
+  if (languages.indexOf(lang) < 0) {
+    try { lang = localStorage.getItem('bba-lang'); } catch (_) {}
+  }
+  if (languages.indexOf(lang) < 0) lang = 'en';
+  document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang;
+  document.documentElement.className = 'lang-' + lang;
+})();
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title data-en="International B2B Marketing | Better Business Ad" data-ja="海外B2Bマーケティング | Better Business Ad">International B2B Marketing | Better Business Ad</title>
+<title data-zh="海外市场调研与客户开发 | Better Business Ad" data-en="International B2B Marketing | Better Business Ad" data-ja="海外B2Bマーケティング | Better Business Ad">International B2B Marketing | Better Business Ad</title>
 <meta name="description" content="Better Business Ad: B2B marketing services, audience research and monthly outreach pricing.">
-<link rel="stylesheet" href="style.css?v=20261030a">
+<link rel="stylesheet" href="style.css?v=20261124a">
 </head>
 <body>
 <a class="skip-link" href="#main-content">
 <span data-l="en">Skip to content</span>
 <span data-l="ja">本文へ移動</span>
+<span data-l="zh">跳至正文</span>
 </a>
 <header class="head">
 <div class="wrap navb">
@@ -21,27 +33,33 @@
 <a href="index.html" aria-current="page">
 <span data-l="en">Home</span>
 <span data-l="ja">ホーム</span>
+<span data-l="zh">首页</span>
 </a>
 <a href="services.html">
 <span data-l="en">Services &amp; Pricing</span>
 <span data-l="ja">サービス・料金</span>
+<span data-l="zh">服务与价格</span>
 </a>
 <a href="terms.html">
 <span data-l="en">Terms</span>
 <span data-l="ja">利用規約</span>
+<span data-l="zh">服务条款</span>
 </a>
 <a href="privacy.html">
 <span data-l="en">Privacy</span>
 <span data-l="ja">プライバシー</span>
+<span data-l="zh">隐私政策</span>
 </a>
 <a href="legal.html">
 <span data-l="en">Disclosure</span>
 <span data-l="ja">特商法表記</span>
+<span data-l="zh">交易信息披露</span>
 </a>
 </nav>
 <div class="langs" role="group" aria-label="Language">
 <button id="enBtn" type="button" aria-pressed="true">EN</button>
 <button id="jaBtn" type="button" aria-pressed="false">日本語</button>
+<button id="zhBtn" type="button" lang="zh-CN" aria-pressed="false">简体中文</button>
 </div>
 </div>
 </header>
@@ -49,46 +67,59 @@
 <section class="hero">
 <div class="eyebrow" data-l="en">BETTER BUSINESS AD</div>
 <div class="eyebrow" data-l="ja">BETTER BUSINESS AD</div>
-<h1 class="" data-l="en">Reach relevant businesses in international markets.</h1>
-<h1 class="" data-l="ja">海外の有望な事業者へ、的確にアプローチ。</h1>
-<p class="lead" data-l="en">Practical B2B outreach services for suppliers to restaurants and clothing retailers, alongside tailored lead research and overseas business development.</p>
-<p class="lead" data-l="ja">飲食店・衣料品小売店向けサプライヤーのためのB2B販促支援、見込み顧客調査、海外営業開拓サービス。</p>
+<div class="eyebrow" data-l="zh">BETTER BUSINESS AD</div>
+<h1 class="" data-l="en">Overseas market research and buyer development</h1>
+<h1 class="" data-l="ja">海外市場の調査から、取引先開拓まで。</h1>
+<h1 class="" data-l="zh">海外市场调研与客户开发</h1>
+<p class="lead" data-l="en">Goizen Co., Ltd. helps suppliers develop overseas markets through research and B2B promotion, with a focus on suppliers to restaurants and independent clothing stores. You can commission research on its own or engage us to run a campaign.</p>
+<p class="lead" data-l="ja">五井善株式会社は、海外販路の開拓を目指す企業に市場調査とB2B販促の実務支援を提供します。主な対象は飲食店・独立系衣料品店向けのサプライヤーです。調査のみのご依頼も承ります。</p>
+<p class="lead" data-l="zh">五井善株式会社为希望开拓海外销售渠道的企业提供市场调研与 B2B 推广支持，主要服务于面向餐厅和独立服装店的供应商。您可以单独委托调研，也可以委托我们执行推广。</p>
 <p data-l="en" class="fine">Managed marketing services using business-level research and general business mailboxes. See our <a href="services.html#responsible-outreach">business-information and outreach policy</a>.</p>
 <p data-l="ja" class="fine">店舗・企業の調査と汎用的な業務用メールアドレスを用いたマーケティング支援です。<a href="services.html#responsible-outreach">企業情報の利用と適正なアプローチについて</a>をご覧ください。</p>
+<p data-l="zh" class="fine">我们根据商铺和企业资料开展调研，通过符合联系条件的通用业务邮箱开展推广。详见<a href="services.html#responsible-outreach">企业信息使用与推广规则</a>。</p>
 <p>
 <a class="btn" href="services.html">
 <span class="" data-l="en">View services & monthly pricing</span>
 <span class="" data-l="ja">サービス・月額料金を見る</span>
+<span class="" data-l="zh">查看服务与月度价格</span>
 </a>
 </p>
 </section>
 <section class="section">
 <h2 class="" data-l="en">Who we help</h2>
 <h2 class="" data-l="ja">主な対象市場</h2>
+<h2 class="" data-l="zh">我们服务的客户</h2>
 <div class="grid2">
 <article class="card">
 <h3 class="" data-l="en">Restaurant suppliers</h3>
 <h3 class="" data-l="ja">飲食店向けサプライヤー</h3>
+<h3 class="" data-l="zh">餐饮行业供应商</h3>
 <p class="" data-l="en">Businesses offering products or services that restaurants commonly need.</p>
 <p class="" data-l="ja">飲食店に必要な商品・サービスを提供する企業。</p>
+<p class="" data-l="zh">向餐厅提供商品或服务的企业。</p>
 </article>
 <article class="card">
 <h3 class="" data-l="en">Clothing wholesale and retail suppliers</h3>
 <h3 class="" data-l="ja">衣料品・卸売関連企業</h3>
+<h3 class="" data-l="zh">服装批发商与供应商</h3>
 <p class="" data-l="en">Suppliers seeking independent clothing stores and boutiques.</p>
 <p class="" data-l="ja">独立系衣料品店・ブティックへの販路開拓を希望する企業。</p>
+<p class="" data-l="zh">希望向独立服装店和精品店拓展销路的供应商。</p>
 </article>
 </div>
 </section>
 <section class="section">
 <h2 class="" data-l="en">A clear, project-based process</h2>
 <h2 class="" data-l="ja">明確なプロジェクト型のサービス</h2>
+<h2 class="" data-l="zh">如何委托项目</h2>
 <p class="" data-l="en">Choose a target market, discuss the offer, and receive a written proposal with price and delivery scope. After acceptance, payment is arranged by invoice, bank transfer or an approved hosted payment link.</p>
 <p class="" data-l="ja">対象市場と商材を伺い、対象範囲・金額・納期を明記した書面の提案を行います。ご承諾後、請求書・銀行振込または承認済みの外部決済リンクにてお支払いいただきます。</p>
+<p class="" data-l="zh">您介绍目标市场及产品后，我们会提供书面方案，列明服务范围、价格和交付时间。您确认后，我们会提供账单，并告知银行转账或已获批的在线付款链接等可用方式。</p>
 <p>
 <a href="services.html">
 <span class="" data-l="en">See country counts and plans</span>
 <span class="" data-l="ja">国別件数・料金を見る</span>
+<span class="" data-l="zh">查看各国调研范围与套餐</span>
 </a>
 </p>
 </section>
@@ -99,16 +130,19 @@
 <a href="legal.html">
 <span data-l="en">Commercial disclosure</span>
 <span data-l="ja">特定商取引法に基づく表記</span>
+<span data-l="zh">日本《特定商取引法》规定的信息披露</span>
 </a> · <a href="terms.html">
 <span data-l="en">Terms of Service</span>
 <span data-l="ja">利用規約</span>
+<span data-l="zh">服务条款</span>
 </a> · <a href="privacy.html">
 <span data-l="en">Privacy Policy</span>
 <span data-l="ja">プライバシーポリシー</span>
+<span data-l="zh">隐私政策</span>
 </a>
 </div>
 </footer>
-<script src="site.js?v=20261030a">
+<script src="site.js?v=20261124a">
 </script>
 </body>
 </html>

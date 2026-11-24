@@ -1,16 +1,20 @@
 (function () {
   'use strict';
   const root = document.documentElement;
-  const buttons = { en: document.getElementById('enBtn'), ja: document.getElementById('jaBtn') };
+  const buttons = { en: document.getElementById('enBtn'), ja: document.getElementById('jaBtn'), zh: document.getElementById('zhBtn') };
   function requestedLanguage() {
     const query = new URLSearchParams(location.search).get('lang');
-    if (query === 'en' || query === 'ja') return query;
-    try { if (localStorage.getItem('bba-lang') === 'ja') return 'ja'; } catch (_) {}
+    if (Object.hasOwn(buttons, query)) return query;
+    try {
+      const saved = localStorage.getItem('bba-lang');
+      if (Object.hasOwn(buttons, saved)) return saved;
+    } catch (_) {}
     return 'en';
   }
   function setLanguage(language, updateUrl) {
-    const lang = language === 'ja' ? 'ja' : 'en';
-    root.lang = lang;
+    const lang = language;
+    root.lang = lang === 'zh' ? 'zh-CN' : lang;
+    root.classList.toggle('lang-zh', lang === 'zh');
     root.classList.toggle('lang-ja', lang === 'ja');
     root.classList.toggle('lang-en', lang === 'en');
     root.classList.remove('bba-preinit', 'bba-nav-initializing');
@@ -23,7 +27,8 @@
       buttons[key].setAttribute('aria-pressed', String(key === lang));
     });
     const nav = document.querySelector('header nav');
-    if (nav) nav.setAttribute('aria-label', lang === 'ja' ? 'メインナビゲーション' : 'Main navigation');
+    if (nav) nav.setAttribute('aria-label', { en: 'Main navigation', ja: 'メインナビゲーション', zh: '主导航' }[lang]);
+    document.querySelector('.langs').setAttribute('aria-label', { en: 'Language', ja: '言語', zh: '语言' }[lang]);
     try { localStorage.setItem('bba-lang', lang); } catch (_) {}
     if (updateUrl) {
       const current = new URL(location.href);
@@ -32,7 +37,7 @@
     }
     document.querySelectorAll('a[href]').forEach(function (link) {
       const href = link.getAttribute('href');
-      if (!href || /^(mailto:|tel:|https?:|\/\/)/i.test(href)) return;
+      if (!href || href.startsWith('#') || /^(mailto:|tel:|https?:|\/\/)/i.test(href)) return;
       const target = new URL(href, location.href);
       if (target.origin !== location.origin || !/\.html$/.test(target.pathname)) return;
       target.searchParams.set('lang', lang);

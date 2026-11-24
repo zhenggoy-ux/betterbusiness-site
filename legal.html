@@ -2,17 +2,29 @@
 
 <html class="lang-en" lang="en">
 <head>
-<script>(function(){var l='en';try{var q=new URLSearchParams(location.search).get('lang');var s=localStorage.getItem('bba-lang');l=q==='ja'||q==='en'?q:s==='ja'?'ja':'en';}catch(e){}document.documentElement.lang=l;document.documentElement.className='lang-'+l;})();</script>
+<script>
+(function () {
+  var languages = ['en', 'ja', 'zh'];
+  var lang = new URLSearchParams(location.search).get('lang');
+  if (languages.indexOf(lang) < 0) {
+    try { lang = localStorage.getItem('bba-lang'); } catch (_) {}
+  }
+  if (languages.indexOf(lang) < 0) lang = 'en';
+  document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang;
+  document.documentElement.className = 'lang-' + lang;
+})();
+</script>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title data-en="Commercial Disclosure | Better Business Ad" data-ja="特定商取引法に基づく表記 | Better Business Ad">Commercial Disclosure | Better Business Ad</title>
+<title data-zh="交易信息披露 | Better Business Ad" data-en="Commercial Disclosure | Better Business Ad" data-ja="特定商取引法に基づく表記 | Better Business Ad">Commercial Disclosure | Better Business Ad</title>
 <meta content="Better Business Ad: B2B marketing services, audience research and monthly outreach pricing." name="description"/>
-<link href="style.css?v=20261030a" rel="stylesheet"/>
+<link href="style.css?v=20261124a" rel="stylesheet"/>
 </head>
 <body>
 <a class="skip-link" href="#main-content">
 <span data-l="en">Skip to content</span>
 <span data-l="ja">本文へ移動</span>
+<span data-l="zh">跳至正文</span>
 </a>
 <header class="head">
 <div class="wrap navb">
@@ -22,37 +34,46 @@
 <a href="index.html">
 <span data-l="en">Home</span>
 <span data-l="ja">ホーム</span>
+<span data-l="zh">首页</span>
 </a>
 <a href="services.html">
 <span data-l="en">Services &amp; Pricing</span>
 <span data-l="ja">サービス・料金</span>
+<span data-l="zh">服务与价格</span>
 </a>
 <a href="terms.html">
 <span data-l="en">Terms</span>
 <span data-l="ja">利用規約</span>
+<span data-l="zh">服务条款</span>
 </a>
 <a href="privacy.html">
 <span data-l="en">Privacy</span>
 <span data-l="ja">プライバシー</span>
+<span data-l="zh">隐私政策</span>
 </a>
 <a href="legal.html" aria-current="page">
 <span data-l="en">Disclosure</span>
 <span data-l="ja">特商法表記</span>
+<span data-l="zh">交易信息披露</span>
 </a>
 </nav>
 <div class="langs" role="group" aria-label="Language">
 <button id="enBtn" type="button" aria-pressed="true">EN</button>
 <button id="jaBtn" type="button" aria-pressed="false">日本語</button>
+<button id="zhBtn" type="button" lang="zh-CN" aria-pressed="false">简体中文</button>
 </div>
 </div>
 </header>
 <main class="wrap" id="main-content">
 <div class="eyebrow" data-l="en">BUSINESS INFORMATION</div>
 <div class="eyebrow" data-l="ja">事業者情報</div>
+<div class="eyebrow" data-l="zh">经营者信息</div>
 <h1 class="" data-l="en">Commercial Disclosure</h1>
 <h1 class="" data-l="ja">特定商取引法に基づく表記</h1>
+<h1 class="" data-l="zh">日本《特定商取引法》规定的信息披露</h1>
 <p class="" data-l="en">Information about the operator, services, prices, payment and refund terms.</p>
 <p class="" data-l="ja">事業者情報、サービス、料金、お支払い、キャンセルおよび返金条件を掲載しています。</p>
+<p class="" data-l="zh">本页列明经营者、服务、费用、付款、取消与退款条件。</p>
 <div class="tablewrap legal-table" data-l="en">
 <table>
 <tr>
@@ -85,7 +106,7 @@
 </tr>
 <tr>
 <th scope="row">Services</th>
-<td>Managed B2B marketing: research and selection of shops or companies, campaign planning and content preparation, email outreach to eligible general business mailboxes, and ongoing review. Tailored business research and international sales-development support are also available.</td>
+<td>Managed B2B marketing: research and selection of shops or companies, campaign planning and content preparation, email outreach to eligible general business mailboxes, and ongoing review. Overseas market and buyer research can also be commissioned separately. We quote for each research report and its recommendations according to the agreed scope.</td>
 </tr>
 <tr>
 <th scope="row">Service price</th>
@@ -157,7 +178,7 @@
 </tr>
 <tr>
 <th scope="row">提供サービス</th>
-<td>店舗・企業の調査・選定、販促企画・文案作成、条件を満たす汎用的な業務用メールアドレスへのB2B販促実施、および継続的な見直しを行うマーケティング支援。個別の企業・市場調査および海外営業開拓にも対応します。</td>
+<td>店舗・企業の調査・選定、販促企画・文案作成、条件を満たす汎用的な業務用メールアドレスへのB2B販促実施、および継続的な見直しを行うマーケティング支援。海外市場・見込み取引先の調査は単独でも承ります。調査報告書と販路開拓の提案については、調査範囲に応じて個別にお見積りします。</td>
 </tr>
 <tr>
 <th scope="row">販売価格</th>
@@ -197,6 +218,74 @@
 </tr>
 </table>
 </div>
+<div class="tablewrap legal-table" data-l="zh">
+<table>
+<tr>
+<th scope="row">网站名称</th>
+<td>Better Business Ad</td>
+</tr>
+<tr>
+<th scope="row">经营者</th>
+<td>五井善株式会社</td>
+</tr>
+<tr>
+<th scope="row">运营负责人</th>
+<td>鄭 公義</td>
+</tr>
+<tr>
+<th scope="row">地址</th>
+<td>日本〒532-0004 大阪府大阪市淀川区西宮原1丁目8番10号</td>
+</tr>
+<tr>
+<th scope="row">电话</th>
+<td><a href="tel:+818057025812">080-5702-5812</a></td>
+</tr>
+<tr>
+<th scope="row">邮箱</th>
+<td><a href="mailto:goy@betterbusiness-ad.com">goy@betterbusiness-ad.com</a></td>
+</tr>
+<tr>
+<th scope="row">服务内容</th>
+<td>可单独委托海外市场与潜在买家调研，获取报告及开发建议。月度 B2B 推广套餐包括商铺和企业调查、筛选、推广规划、文案撰写、向符合条件的通用业务邮箱开展推广及持续改进。</td>
+</tr>
+<tr>
+<th scope="row">服务价格</th>
+<td>四档月度套餐的参考价格及具体内容见<a href="services.html#plan-details">服务与价格</a>。独立调研按项目报价。正式价格、范围和付款条件会在确认订单前以日元书面列明。</td>
+</tr>
+<tr>
+<th scope="row">企业信息使用</th>
+<td>针对餐厅及服装店的推广使用商铺、企业信息及 info@、sales@ 等通用业务邮箱。费用涵盖双方约定的调研、推广规划、文案及执行工作。我们不交易含有个人联系方式的名单。 详见<a href="services.html#responsible-outreach">企业信息使用与推广规则</a>。</td>
+</tr>
+<tr>
+<th scope="row">税费</th>
+<td>在确认订单及收款前，报价单或合同会列明最终日元金额，以及适用税费已包含在内还是另行计收。</td>
+</tr>
+<tr>
+<th scope="row">其他费用</th>
+<td>如有额外费用，我们会在下单前的报价单中列明金额。客户的金融机构可能另收转账或换汇费用，由客户承担。</td>
+</tr>
+<tr>
+<th scope="row">付款方式</th>
+<td>按通知进行银行转账，或使用按项目签发的安全在线付款链接。在线支付方式以付款页面显示的已获批选项为准。每次付款由客户主动确认，不自动续期或扣费。</td>
+</tr>
+<tr>
+<th scope="row">付款时间与期限</th>
+<td>原则上在开始服务前付款。月度套餐可一次预付一个月或指定的多个月份。服务期间、最终日元金额及付款期限在订立合同前书面列明。</td>
+</tr>
+<tr>
+<th scope="row">服务提供时间</th>
+<td>确认合同及约定款项后，在双方约定的日期开始服务。月度套餐仅覆盖书面约定的月份。无实物配送。</td>
+</tr>
+<tr>
+<th scope="row">取消与退款</th>
+<td>尚未开始的月份，结算双方单独约定的准备工作费用及已批准的支出后，原则上予以退款。已开始的服务期间，扣除已执行工作及事先批准的费用，退还未提供部分。费用分摊及不予退还的项目在付款前书面列明。</td>
+</tr>
+<tr>
+<th scope="row">经营许可及资质</th>
+<td>本网站介绍一般 B2B 营销支持服务，不销售需要单独销售许可的商品。</td>
+</tr>
+</table>
+</div>
 </main>
 <footer class="wrap foot">
 <p>© 2026 Better Business Ad · 五井善株式会社 / Goizen Co., Ltd.</p>
@@ -204,16 +293,19 @@
 <a href="legal.html">
 <span data-l="en">Commercial disclosure</span>
 <span data-l="ja">特定商取引法に基づく表記</span>
+<span data-l="zh">日本《特定商取引法》规定的信息披露</span>
 </a> · <a href="terms.html">
 <span data-l="en">Terms of Service</span>
 <span data-l="ja">利用規約</span>
+<span data-l="zh">服务条款</span>
 </a> · <a href="privacy.html">
 <span data-l="en">Privacy Policy</span>
 <span data-l="ja">プライバシーポリシー</span>
+<span data-l="zh">隐私政策</span>
 </a>
 </div>
 </footer>
-<script src="site.js?v=20261030a">
+<script src="site.js?v=20261124a">
 </script>
 </body>
 </html>
