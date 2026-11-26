@@ -202,3 +202,10 @@ tbody tr:last-child > * { border-bottom: 0; }
 .checkout input[type="checkbox"] { width: 1.2rem; height: 1.2rem; vertical-align: middle; }
 .checkout button { font: inherit; cursor: pointer; }
 .checkout button:disabled { opacity: .6; cursor: wait; }
+
+.payment-methods { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; align-items: stretch; }
+.payment-methods > .btn { display: flex; align-items: center; justify-content: center; padding: 1rem; min-height: 5rem; }
+.payment-pending { display: flex; flex-direction: column; justify-content: center; gap: .35rem; padding: 1rem; border: 1px solid var(--line); border-radius: .35rem; background: var(--mist); color: var(--muted); }
+.payment-pending strong { font-size: 1rem; }
+.payment-pending span { font-size: .875rem; }
+@media (max-width: 35rem) { .payment-methods { grid-template-columns: 1fr; } }
