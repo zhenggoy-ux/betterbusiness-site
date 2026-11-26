@@ -11,7 +11,7 @@ module.exports = async function checkout(req, res) {
   const amount = price * months * (months >= 5 ? 90 : months >= 2 ? 95 : 100) / 100;
   if (!price || !Number.isSafeInteger(months) || months < 1 || !Number.isSafeInteger(amount)) return res.status(400).send('Invalid plan or duration.');
   if (data?.confirmed !== 'yes') return res.status(400).send('Please confirm the written agreement.');
-  const locale = ({en:'en',ja:'ja',zh:'zh-CN'})[data.lang] || 'en';
+  const locale = ({en:'en',ja:'ja',zh:'en'})[data.lang] || 'en';
   const key = process.env.KOMOJU_LIVE_SECRET_KEY;
   if (!key) return res.status(503).send('Checkout is unavailable.');
   try {
