@@ -16,7 +16,7 @@ module.exports = async function checkout(req, res) {
     const response = await fetch('https://komoju.com/api/v1/sessions', {
       method: 'POST',
       headers: {'Content-Type':'application/json', Authorization:'Basic ' + Buffer.from(key + ':').toString('base64')},
-      body: JSON.stringify({mode:'payment', currency:'JPY', amount, payment_types:['wechatpay','alipay'], return_url:origin + '/services.html#checkout', metadata:{plan:data.plan,months:String(months)}})
+      body: JSON.stringify({mode:'payment', currency:'JPY', amount,  return_url:origin + '/services.html#checkout', metadata:{plan:data.plan,months:String(months)}})
     });
     if (!response.ok) return res.status(502).send('KOMOJU could not open this test checkout. Return to the plans to try again.');
     const session = await response.json();
