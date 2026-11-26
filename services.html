@@ -164,7 +164,7 @@
 <p data-l="en" class="fine">Plan figures are the maximum target audience size per service month. We do not guarantee a fixed sending frequency, delivery, replies or sales. Campaigns are tailored to the client’s offer. Larger projects may be phased across separately agreed service months, subject to qualification and available eligible contacts.</p>
 <p data-l="ja" class="fine">プランの数値は1か月の対象候補規模の上限です。一定の送信頻度、配信到達、返信、売上を保証するものではありません。施策はお客様の商材に合わせて調整します。大規模な案件は、連絡条件と対象者を確認し、各月の範囲を合意したうえで複数か月に分けて実施できます。</p>
 <p data-l="zh" class="fine">各套餐列出的是每个服务月的候选对象规模上限。我们根据客户的产品制定方案，不保证固定发送频率、邮件送达、回复或销售结果。大型项目可在筛选对象并约定每月工作范围后，分月执行。</p>
-<p data-l="en" class="note">USD prices are indicative monthly references. Before an order is accepted or a payment link is issued, we confirm the scope, eligible audience, exact JPY amount, whether applicable tax is included or charged separately, any additional charges, service dates and payment terms in writing. No payment is collected on this page.</p>
+<p data-l="en" class="note">USD prices are indicative monthly references. Before an order is accepted or a payment link is issued, we confirm the scope, eligible audience, exact JPY amount, whether applicable tax is included or charged separately, any additional charges, service dates and payment terms in writing. Payment for agreed services is available below.</p>
 <p data-l="ja" class="note">表示の日本円料金は月額の参考料金です。ご注文の確定または決済リンクの発行前に、業務範囲、連絡可能な対象、最終的な日本円金額、適用される税の税込・税別の区分、追加費用の有無、提供期間および支払条件を書面で明示します。このページから直接決済することはありません。</p>
 <p data-l="zh" class="note" id="cny-reference">人民币价格仅供参考，按 2026 年 11 月 24 日中国外汇交易中心公布的中间价（100 日元折合 4.2142 元人民币）换算并四舍五入至整数元。正式报价和结算使用日元。在确认订单或发出付款链接前，我们会书面列明工作范围、符合联系条件的对象、最终日元金额、是否含税、额外费用、服务日期及付款条件。 <a href="https://www.chinamoney.com.cn/chinese/bkccpr/index.html?tab=2">汇率来源</a></p>
 <div class="plan-details" id="plan-details">
@@ -252,21 +252,21 @@
 <p data-l="ja" class="fine">本プランは業務提供のための料金プランであり、個人の連絡先名簿や連絡先データベースの販売を目的とするものではありません。数値は対象規模の上限であり、送信・到達件数、返信数、売上を保証しません。連絡可能な対象、業務内容、最終的な日本円金額、適用される税の取扱いおよび提供期間は、お支払い前に書面で確認します。自動更新はありません。</p>
 <p data-l="zh" class="fine">套餐费用对应上述服务。候选对象数量不代表保证发送数、送达数、回复数或销售额。符合联系条件的对象、工作内容、最终日元金额、税费及服务日期均在付款前书面确认。服务不自动续期。<a href="#cny-reference">人民币折算说明</a></p>
 </div>
-</section><section class="section" id="checkout"><h2><span data-l="en">Test checkout</span><span data-l="ja">テスト決済</span><span data-l="zh">测试付款</span></h2><p><span data-l="en">One-time payment after written confirmation. 2–4 months: 5% off. 5+ months: 10% off.</span><span data-l="ja">書面合意後の一括払い。2～4か月は5%引き、5か月以上は10%引き。</span><span data-l="zh">书面确认后一次性付款。2–4个月享95折，5个月起享9折。</span></p><form method="post" action="/api/checkout"><label><span data-l="en">Plan</span><span data-l="ja">プラン</span><span data-l="zh">套餐</span> <select name="plan"><option data-price="30000">Starter</option><option data-price="68000">Growth</option><option data-price="120000">Business</option><option data-price="210000">Enterprise</option></select></label> <label><span data-l="en">Months</span><span data-l="ja">月数</span><span data-l="zh">月数</span> <input name="months" type="number" min="1" step="1" required value="1" style="width:6em"></label><p><span data-l="en">Total</span><span data-l="ja">合計</span><span data-l="zh">合计</span> <output aria-live="polite">JPY 30,000</output></p><button class="btn" type="submit">WeChat Pay / Alipay</button></form></section>
-<script>
-const checkout = document.querySelector('#checkout form');
-function updateTotal() {
-  const months = checkout.elements.months.valueAsNumber;
-  const price = Number(checkout.elements.plan.selectedOptions[0].dataset.price);
-  const total = price * months * (months >= 5 ? 90 : months >= 2 ? 95 : 100) / 100;
-  checkout.querySelector('output').value = Number.isSafeInteger(total) && checkout.checkValidity() ? 'JPY ' + total.toLocaleString('en-US') : '—';
-}
-checkout.addEventListener('input', updateTotal);
-document.querySelectorAll('[data-plan]').forEach(link => link.addEventListener('click', () => {
-  checkout.elements.plan.value = link.dataset.plan;
-  updateTotal();
-}));
-</script>
+</section><section class="section checkout" id="checkout">
+<h2><span data-l="en">Pay for your agreed service</span><span data-l="ja">合意済みサービスのお支払い</span><span data-l="zh">支付已确认的服务</span></h2>
+<p><span data-l="en">Select the plan and service months agreed with us in writing. Payment is charged once in Japanese yen.</span><span data-l="ja">書面で合意したプランと提供月数をお選びください。日本円による一括払いです。</span><span data-l="zh">请选择双方书面确认的套餐和服务月数，以日元一次性付款。</span></p>
+<p><span data-l="en">1 month at the standard rate · 2–4 months 5% off · 5 or more months 10% off the full order.</span><span data-l="ja">1か月は通常料金、2～4か月は総額から5%引き、5か月以上は総額から10%引き。</span><span data-l="zh">1个月原价，2–4个月整单95折，5个月起整单9折。</span></p>
+<form method="post" action="/api/checkout">
+<div class="checkout-fields"><label><span data-l="en">Plan</span><span data-l="ja">プラン</span><span data-l="zh">套餐</span><select name="plan"><option data-price="30000">Starter</option><option data-price="68000">Growth</option><option data-price="120000">Business</option><option data-price="210000">Enterprise</option></select></label>
+<label><span data-l="en">Service months</span><span data-l="ja">サービス月数</span><span data-l="zh">服务月数</span><input name="months" type="number" min="1" step="1" required value="1"></label></div>
+<p><span data-l="en">Standard total</span><span data-l="ja">通常総額</span><span data-l="zh">原价总额</span> <output id="standard-total">JPY 30,000</output></p>
+<p><span data-l="en">Discount</span><span data-l="ja">割引額</span><span data-l="zh">优惠金额</span> <output id="discount-total">JPY 0</output></p>
+<p class="checkout-total"><span data-l="en">Total payable</span><span data-l="ja">お支払い総額</span><span data-l="zh">应付总额</span> <output id="payable-total" aria-live="polite">JPY 30,000</output></p>
+<p><span data-l="en">Check that this total matches the written quote, including the agreed tax treatment. For a different agreed amount, contact us for a separate payment link.</span><span data-l="ja">税の取扱いを含め、書面のお見積りと総額が一致することをご確認ください。金額が異なる場合は、個別の決済リンクをご依頼ください。</span><span data-l="zh">请核对应付总额与书面报价及约定税费处理一致。约定金额不同时，请联系我们提供单独付款链接。</span></p>
+<label class="checkout-consent"><input type="checkbox" name="confirmed" value="yes" required><span data-l="en">I confirm that the plan, service dates, total and tax treatment match our written agreement, and accept the</span><span data-l="ja">プラン・提供日・総額・税の取扱いが書面合意と一致することを確認し、以下に同意します。</span><span data-l="zh">我确认套餐、服务日期、总额及税费处理与书面约定一致，并接受</span> <a href="terms.html"><span data-l="en">Terms of Service</span><span data-l="ja">利用規約</span><span data-l="zh">服务条款</span></a> · <a href="legal.html"><span data-l="en">Commercial disclosure and refund conditions</span><span data-l="ja">特定商取引法に基づく表記・返金条件</span><span data-l="zh">交易信息披露及退款条件</span></a></label>
+<button class="btn" type="submit"><span data-l="en">Continue to WeChat Pay / Alipay</span><span data-l="ja">WeChat Pay / Alipayへ進む</span><span data-l="zh">前往微信支付 / 支付宝</span></button>
+<p><span data-l="en">No automatic renewal. You choose and authorize each payment.</span><span data-l="ja">自動更新はありません。お支払いはその都度お客様が承認します。</span><span data-l="zh">无自动续费，每次付款均由您主动确认。</span></p>
+</form></section><script src="checkout.js"></script>
 <section class="section" id="market-research">
 <h2 data-l="en">Overseas market and buyer research</h2>
 <h2 data-l="ja">海外市場・見込み取引先調査</h2>

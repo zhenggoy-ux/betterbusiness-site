@@ -192,3 +192,13 @@ tbody tr:last-child > * { border-bottom: 0; }
   .brand b { flex: none; width: 1.7rem; height: 1.7rem; font-size: 1.05rem; }
   .langs button { min-height: 2.2rem; padding-inline: .4rem; }
 }
+
+.checkout { max-width: 48rem; }
+.checkout-fields { display: flex; flex-wrap: wrap; gap: 1rem; }
+.checkout-fields label { display: grid; gap: .5rem; flex: 1 1 12rem; }
+.checkout select, .checkout input[type="number"] { width: 100%; padding: .7rem; border: 1px solid #9bb7b3; border-radius: .3rem; font: inherit; background: white; color: inherit; box-sizing: border-box; }
+.checkout-total { font-size: 1.4rem; font-weight: 700; }
+.checkout-consent { display: block; margin: 1.5rem 0; line-height: 1.8; }
+.checkout input[type="checkbox"] { width: 1.2rem; height: 1.2rem; vertical-align: middle; }
+.checkout button { font: inherit; cursor: pointer; }
+.checkout button:disabled { opacity: .6; cursor: wait; }

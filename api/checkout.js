@@ -10,20 +10,22 @@ module.exports = async function checkout(req, res) {
   const price = prices.get(data?.plan);
   const amount = price * months * (months >= 5 ? 90 : months >= 2 ? 95 : 100) / 100;
   if (!price || !Number.isSafeInteger(months) || months < 1 || !Number.isSafeInteger(amount)) return res.status(400).send('Invalid plan or duration.');
+  if (data?.confirmed !== 'yes') return res.status(400).send('Please confirm the written agreement.');
+  const locale = ({en:'en',ja:'ja',zh:'zh-CN'})[data.lang] || 'en';
   const key = process.env.KOMOJU_LIVE_SECRET_KEY;
-  if (!key) return res.status(503).send('Test checkout is unavailable.');
+  if (!key) return res.status(503).send('Checkout is unavailable.');
   try {
     const response = await fetch('https://komoju.com/api/v1/sessions', {
       method: 'POST',
       headers: {'Content-Type':'application/json', Authorization:'Basic ' + Buffer.from(key + ':').toString('base64')},
-      body: JSON.stringify({mode:'payment', currency:'JPY', amount, payment_types:['wechatpay','alipay'],  return_url:origin + '/services.html#checkout', metadata:{plan:data.plan,months:String(months)}})
+      body: JSON.stringify({mode:'payment', currency:'JPY', amount, payment_types:['wechatpay','alipay'],  default_locale:locale, return_url:origin + '/payment-return.html?lang=' + (data.lang === 'zh' ? 'zh' : locale), metadata:{plan:data.plan,months:String(months)}})
     });
-    if (!response.ok) return res.status(502).send('KOMOJU could not open this test checkout. Return to the plans to try again.');
+    if (!response.ok) return res.status(502).send('KOMOJU could not open checkout. Return to the plans to try again.');
     const session = await response.json();
     const url = new URL(session.session_url);
     if (url.protocol !== 'https:' || !['komoju.com','test.komoju.com'].includes(url.hostname)) throw Error('Unexpected checkout URL');
     return res.redirect(303,url.href);
   } catch {
-    return res.status(502).send('Test checkout is temporarily unavailable.');
+    return res.status(502).send('Checkout is temporarily unavailable.');
   }
 };
