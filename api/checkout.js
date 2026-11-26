@@ -10,13 +10,13 @@ module.exports = async function checkout(req, res) {
   const price = prices.get(data?.plan);
   const amount = price * months * (months >= 5 ? 90 : months >= 2 ? 95 : 100) / 100;
   if (!price || !Number.isSafeInteger(months) || months < 1 || !Number.isSafeInteger(amount)) return res.status(400).send('Invalid plan or duration.');
-  const key = process.env.KOMOJU_SECRET_KEY;
+  const key = process.env.KOMOJU_LIVE_SECRET_KEY;
   if (!key) return res.status(503).send('Test checkout is unavailable.');
   try {
     const response = await fetch('https://komoju.com/api/v1/sessions', {
       method: 'POST',
       headers: {'Content-Type':'application/json', Authorization:'Basic ' + Buffer.from(key + ':').toString('base64')},
-      body: JSON.stringify({mode:'payment', currency:'JPY', amount,  return_url:origin + '/services.html#checkout', metadata:{plan:data.plan,months:String(months)}})
+      body: JSON.stringify({mode:'payment', currency:'JPY', amount, payment_types:['wechatpay','alipay'],  return_url:origin + '/services.html#checkout', metadata:{plan:data.plan,months:String(months)}})
     });
     if (!response.ok) return res.status(502).send('KOMOJU could not open this test checkout. Return to the plans to try again.');
     const session = await response.json();
